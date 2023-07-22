@@ -11,6 +11,12 @@
 	/// Load Global Function
 	require_once __DIR__ . '/' . APP_MOD_PREFIX . 'function.php';
 
+	/// Debug Toggle
+	if (APP_ERROR_DISABLE){
+		ini_set('display_errors', 0);
+    	ini_set('display_startup_errors', 0); error_reporting(-1);
+	}
+
 	/// Load DB Config
 	if ( file_exists( app_theme_dir() . '/core/db.php' ) ) {
 		include app_theme_dir() . '/core/db.php';
