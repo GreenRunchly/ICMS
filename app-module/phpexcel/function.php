@@ -1,5 +1,11 @@
 <?php
 
+	/// Load PHP Excel Library Only
+	function app_excel_lib(){
+		/// Load PHP Excel Library
+		return require_once __DIR__ . "/phpexcel-1.8/Classes/PHPExcel.php";
+	}
+
 	/// Mengambil Data Excel
 	function app_excel_get_data( $file_where, $at_sheet=0, $which_cell=['A','B'], $at_row=0, $last_row=''){
 
