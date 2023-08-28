@@ -17,7 +17,8 @@ function app_dir() { /// Path direktori tema yang dipakai
 
 /// Get main app url (https://ieu.link)
 function app_url() { /// Path direktori tema yang dipakai
-	return (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://".$_SERVER["HTTP_HOST"].(rtrim($_SERVER["REQUEST_URI"],'/'));
+	global $urlhandler;
+	return str_ireplace($urlhandler, '', (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://".$_SERVER["HTTP_HOST"].(rtrim($_SERVER["REQUEST_URI"],'/')));
 }
 
 /// Get app theme directory (/home/ieu.link/app-module)
